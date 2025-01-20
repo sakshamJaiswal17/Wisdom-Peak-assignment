@@ -1,0 +1,199 @@
+/* Base Light Mode styles (default) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --button-bg-color: #007bff;
+  --button-text-color: white;
+  --input-bg-color: #f4f4f4;
+  --input-border-color: #ccc;
+  --link-color: #007bff;
+  --link-hover-color: #0056b3;
+  --header-bg-color: #f8f9fa;
+  --card-bg-color: #fff;
+  --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode styles */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --button-bg-color: #bb86fc;
+  --button-text-color: #121212;
+  --input-bg-color: #333333;
+  --input-border-color: #444;
+  --link-color: #bb86fc;
+  --link-hover-color: #3700b3;
+  --header-bg-color: #333333;
+  --card-bg-color: #222222;
+  --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  --card-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* General Body */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Link Styling */
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Header */
+header {
+  background-color: var(--header-bg-color);
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  color: var(--text-color);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Buttons */
+button {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: darken(var(--button-bg-color), 10%);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Elements */
+input,
+textarea {
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid var(--input-border-color);
+  width: 100%;
+  margin-bottom: 15px;
+  font-size: 16px;
+  transition: background-color 0.3s, border 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--button-bg-color);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-color);
+}
+
+/* Card Layout for User List */
+.user-list li {
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s ease;
+}
+
+.user-list li:hover {
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-5px);
+}
+
+.user-list h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.user-list p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+/* User Details */
+.user-detail {
+  background-color: var(--card-bg-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  width: 60%;
+  margin: 20px auto;
+}
+
+.user-detail h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.user-detail p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.theme-toggle-btn:hover {
+  background-color: darken(var(--button-bg-color), 10%);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Container for User List and User Details */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .user-detail {
+    width: 90%;
+  }
+
+  .user-list li {
+    padding: 10px;
+  }
+
+  .theme-toggle-btn {
+    width: 100%;
+    font-size: 18px;
+    padding: 15px;
+  }
+}
